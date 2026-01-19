@@ -102,7 +102,7 @@ resource "aws_s3_bucket" "s3" {
   # tags: argument (map of string)
   # Map syntax: { <KEY> = <VALUE>, ... }
   tags = {
-    key = "Dev"
+    Environment = "Dev"
   }
 }
 
@@ -133,7 +133,7 @@ resource "aws_s3_bucket_website_configuration" "s3_website_config" {
   index_document {
     # suffix: argument inside index_document block
     # (default file served at root)
-    suffix = "index.html"
+    suffix = var.index_doc
     # If you want this variable-driven:
     # suffix = var.index_doc
     # - var: variable namespace
@@ -212,5 +212,5 @@ resource "aws_s3_bucket_policy" "s3_bucket_policy" {
   # aws_s3_bucket.s3
   # - aws_s3_bucket: resource type
   # - s3: resource name
-  depends_on = [aws_s3_bucket.s3]
+  depends_on = [aws_s3_bucket_public_access_block.s3_public_access_block]
 }
