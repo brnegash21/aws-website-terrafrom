@@ -142,7 +142,7 @@ resource "aws_s3_bucket_website_configuration" "s3_website_config" {
 
   error_document {
     # key: argument inside error_document block
-    key = "error.html"
+    key = var.error_doc
     # If you want this variable-driven:
     # key = var.error_doc
   }
