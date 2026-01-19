@@ -36,5 +36,5 @@ variable "error_doc" {
   type = string
 
   # default: error page filename
-  default = "error.html"
+  default = "index.html"
 }
