@@ -12,7 +12,7 @@ variable "s3_bucket_name" {
   type = string
 
   # default: value used if no override is provided
-  default = "the-embassy"
+  default = "The Embassy"
 }
 
 # Index document variable

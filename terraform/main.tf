@@ -101,7 +101,9 @@ resource "aws_s3_bucket" "s3" {
 
   # tags: argument (map of string)
   # Map syntax: { <KEY> = <VALUE>, ... }
-  
+  tags = {
+    key = "Dev"
+  }
 }
 
 # Reference Example (resource attribute):
@@ -160,7 +162,7 @@ resource "aws_s3_bucket_public_access_block" "s3_public_access_block" {
   # - aws_s3_bucket: resource type
   # - s3: resource name
   # - id: attribute
-  bucket = aws_s3_bucket.s3.id
+  bucket = var.s3_bucket_name.id
 
   # These four flags control account/bucket-level blocking of public access.
   # For static website hosting with public reads, these are often set to false.
