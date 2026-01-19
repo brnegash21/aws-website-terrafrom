@@ -101,10 +101,7 @@ resource "aws_s3_bucket" "s3" {
 
   # tags: argument (map of string)
   # Map syntax: { <KEY> = <VALUE>, ... }
-  tags = {
-    Name        = "Bmilli's Bucket"
-    Environment = "Dev"
-  }
+  
 }
 
 # Reference Example (resource attribute):
